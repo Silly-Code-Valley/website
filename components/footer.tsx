@@ -14,7 +14,9 @@ export function Footer() {
   const [data, setData] = useState<GroupData | null>(null)
 
   useEffect(() => {
-    fetch("/data/team.json")
+    // Fetch team data from our API route. On Vercel you can set TEAM_JSON as
+    // an environment variable (private). Locally we fall back to public/data/team.json
+    fetch("/api/team")
       .then((res) => res.json())
       .then(setData)
   }, [])
@@ -28,7 +30,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-xl font-bold mb-2">{data?.group.name}</h3>
-            <p className="text-primary-foreground/80">CS students building innovative projects together.</p>
+            <p className="text-primary-foreground/80">Serious Code. Silly Energy.</p>
           </div>
 
           {/* Quick Links */}
@@ -46,12 +48,12 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a
+                {/* <a
                   href="mailto:contact@sillycodevalley.com"
                   className="hover:text-primary-foreground transition-colors"
                 >
                   Contact
-                </a>
+                </a> */}
               </li>
             </ul>
           </div>

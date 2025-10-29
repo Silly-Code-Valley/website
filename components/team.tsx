@@ -21,7 +21,7 @@ export function Team() {
   const [data, setData] = useState<TeamData | null>(null)
 
   useEffect(() => {
-    fetch("/data/team.json")
+    fetch("/api/team")
       .then((res) => res.json())
       .then(setData)
   }, [])
@@ -34,7 +34,7 @@ export function Team() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Meet the Team</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Five talented CS students collaborating to build innovative solutions
+            The silly minds behind the silly code
           </p>
         </div>
 

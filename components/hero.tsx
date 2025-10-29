@@ -15,7 +15,7 @@ export function Hero() {
   const [data, setData] = useState<GroupData | null>(null)
 
   useEffect(() => {
-    fetch("/data/team.json")
+    fetch("/api/team")
       .then((res) => res.json())
       .then(setData)
   }, [])
